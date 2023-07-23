@@ -66,6 +66,9 @@ function blob_fixup() {
         vendor/etc/libnfc-nci.conf)
             sed -i 's/\/data\/nfc/\/data\/vendor\/nfc/g' "${2}"
             ;;
+        vendor/lib*/libcrypto-compat.so)
+            "${PATCHELF}" --set-soname libcrypto-compat.so "${2}"
+            ;;
         vendor/lib*/liboemcrypto.so)
             "${PATCHELF}" --add-needed libshim_oemcrypto.so "${2}"
             sed -i 's/fopen/kopen/g' "${2}"

@@ -82,6 +82,9 @@ vendor/etc/gnss/gps.cer
 -vendor/lib64/libkeymaster_helper.so
 -vendor/lib64/libskeymaster4device.so
 
+## libcrypto - built from external/boringssl@42125132 with changes done to asn1t.h in 9211b80 reverted
+-vendor/lib64/libcrypto-compat.so|c62caa1fb25df46cc343376fdb03ced8607f6cda
+
 ## NFC
 system/etc/libnfc-nci.conf:vendor/etc/libnfc-nci.conf
 
