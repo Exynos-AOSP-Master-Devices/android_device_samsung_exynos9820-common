@@ -80,19 +80,10 @@ TARGET_KEYMASTER_ADDITIONAL_SHARED_LIBS := \
     libcrypto-compat \
     libshim_crypto
 
-## Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/batt_slate_mode
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED := 0
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED := 1
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE := true
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE := false
-
 ## Manifest
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(COMMON_PATH)/device_framework_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    $(COMMON_PATH)/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
@@ -131,7 +122,6 @@ VENDOR_SECURITY_PATCH := 2023-01-01
 
 ## SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-include device/lineage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
